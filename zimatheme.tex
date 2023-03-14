@@ -1,0 +1,136 @@
+% Copyright (C) 2023 Dr. Ramón L. Panadés Barrueta
+
+% A minimal beamer template optimized for XeTeX
+
+% This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+% You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>. 
+
+\documentclass{beamer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\usepackage{fourier-otf}
+\usepackage{fontspec}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Theme
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\usetheme{default}
+\useinnertheme{metropolis}
+\usecolortheme{default}
+\beamertemplatenavigationsymbolsempty{}
+
+% Font
+\setmonofont{Fira Code}[
+Contextuals=Alternate 
+]
+
+% Colors
+\definecolor{bluish}{HTML}{267CB9}
+\definecolor{reddish}{HTML}{b96326}
+\definecolor{greenish}{HTML}{33b926}
+\definecolor{secondary}{HTML}{1A5F8A}
+
+% Customize the theme colors
+\setbeamercolor{structure}{fg=bluish}
+\setbeamercolor{alerted text}{fg=reddish}
+\setbeamercolor{example text}{fg=greenish}
+\setbeamercolor{footline}{fg=secondary}
+\setbeamerfont{footline}{series=\bfseries}
+
+% Bullets
+\useinnertheme{circles}
+
+% Blocks
+\setbeamercolor{block body alerted}{bg=alerted text.fg!5}
+\setbeamercolor{block title alerted}{bg=reddish, fg=white}
+
+\setbeamercolor{block body}{bg=structure!5}
+\setbeamercolor{block title}{bg=bluish, fg=white}
+
+\setbeamercolor{block body example}{bg=greenish!5}
+\setbeamercolor{block title example}{bg=greenish, fg=white}
+
+\setbeamertemplate{blocks}[rounded][shadow]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Title page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\title{Your title here}
+\author{Your name here}
+\institute{Your institution here}
+
+\begin{document}
+
+\setbeamertemplate{title page}[default]
+
+\begin{frame}[noframenumbering]
+  \titlepage{}
+\end{frame}
+
+\setbeamertemplate{footline}{
+  \vspace{-4em}%
+  \makebox[0.99\paperwidth][r]{
+    \insertframenumber/\inserttotalframenumber{}
+  }
+}
+
+\begin{frame}[noframenumbering]
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Begin the fun!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\section{Introduction}
+
+\begin{frame}{Introduction}
+
+  Some ideas to conquer the world:
+
+  \begin{itemize}
+  \item Learn math
+  \item Think Julia
+  \end{itemize}
+
+  \begin{enumerate}
+  \item Be nice
+  \item and machiavelic
+  \end{enumerate}
+
+\end{frame}
+
+\section{Some math}
+
+\begin{frame}{Equations}
+  \begin{block}{Simple}
+    \(e^{i\pi}+1 =0\)
+  \end{block}
+  
+  \begin{alertblock}{Dangerous}
+    \(E^2={(pc)}^2+{(m_0c^2)}^2\)
+  \end{alertblock}
+
+  \begin{exampleblock}{Inspiring}
+    \(\ell_s = \hbar c \sqrt{\alpha'}\)
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[plain,c,noframenumbering]
+  \centering \Large
+  \textbf{\color{bluish}{Thanks!}}
+\end{frame}
+
+\end{document}
+
+% Local Variables:
+% TeX-engine: xetex
+% End:
