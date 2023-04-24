@@ -15,7 +15,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \usepackage{fourier-otf}
+\usepackage{bm}
+\usepackage{mhchem}
 \usepackage{fontspec}
+\usepackage{tikz}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % Theme
@@ -34,8 +37,11 @@ Contextuals=Alternate
 % Colors
 \definecolor{bluish}{HTML}{267CB9}
 \definecolor{reddish}{HTML}{b96326}
-\definecolor{greenish}{HTML}{33b926}
+\definecolor{greenish}{HTML}{26b995}
 \definecolor{secondary}{HTML}{1A5F8A}
+\definecolor{greengrid}{RGB}{0,165,0}
+\definecolor{bluegrid}{RGB}{31, 38, 231}
+\definecolor{maggrid}{RGB}{231, 31, 221}
 
 % Customize the theme colors
 \setbeamercolor{structure}{fg=bluish}
@@ -58,6 +64,34 @@ Contextuals=Alternate
 \setbeamercolor{block title example}{bg=greenish, fg=white}
 
 \setbeamertemplate{blocks}[rounded][shadow]
+
+% ToC
+\makeatletter
+\patchcmd{\beamer@sectionintoc}
+  {\vfill}
+  {\vskip\itemsep}
+  {}
+  {}
+\makeatother
+
+% Extra commands
+\newcommand\blfootnote[1]{%
+\begingroup
+\renewcommand\thefootnote{}\footnote{#1}%
+\addtocounter{footnote}{-1}%
+\endgroup
+}
+
+% Required for including image in text
+\newcommand*{\img}[1]{
+    \raisebox{-.2\baselineskip}{
+        \includegraphics[
+        height=\baselineskip,
+        width=2\baselineskip,
+        keepaspectratio,
+        ]{#1}
+    }
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % Title page
